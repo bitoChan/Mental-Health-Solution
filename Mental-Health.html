@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <!-- 添加攝像頭 -->
+            <a-entity id="cameraRig">
+            <!-- 運行拖動，但禁止wasd 攝像頭移動 -->
+            <a-camera look-controls="enabled: true" wasd-controls="enabled: false"></a-camera>
+        </a-entity>
+
+        <!-- 添加3D模型 -->
+        <a-entity
+            gltf-model="D:\MentalHealth\Mental-Health-Solution\3D-Modeling\ClassRoom.glb"
+            scale="0.5 0.5 0.5"
+            position="0 0 -5"
+        ></a-entity>
+
+        <!-- 添加光源 -->
+        <a-light type="ambient" color="#445451"></a-light>
+        <a-light type="point" intensity="2" position="2 4 -3"></a-light>
+        </a-scene>
+    </body>
+</html>
