@@ -11,16 +11,15 @@
             <a-camera look-controls="enabled: true" wasd-controls="enabled: false"></a-camera>
         </a-entity>
 
-        <!-- 添加3D模型 -->
-        <a-entity
-            gltf-model="D:\MentalHealth\Mental-Health-Solution\3D-Modeling\ClassRoom.glb"
-            scale="0.5 0.5 0.5"
-            position="0 0 -5"
-        ></a-entity>
-
-        <!-- 添加光源 -->
-        <a-light type="ambient" color="#445451"></a-light>
-        <a-light type="point" intensity="2" position="2 4 -3"></a-light>
-        </a-scene>
+        <a-scene>
+            <!-- 添加3D模型 -->
+            <a-entity
+                gltf-model=".\ClassRoom.glb"
+                scale="0.5 0.5 0.5"
+                position="0 0 -5"
+                material="emissive: #FFF"  
+            ></a-entity>
+        
+        
     </body>
 </html>
