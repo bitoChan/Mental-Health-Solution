@@ -1,0 +1,349 @@
+    body{
+        background-color:#F1E48D;
+        }
+
+    img{
+        width:100%;
+        height:auto;
+        display:block;
+    }
+
+    .bk{
+        width:1700px;
+        height:auto;
+        display:block;
+        position:absolute;
+
+        z-index:1;
+    }
+
+    .bk_01{
+        
+        display:none;
+    }
+
+    .bk_02{
+        
+        display:none;
+    }
+
+    .game{
+    width:1110px;
+    height:auto;
+    display:block;
+
+    position:absolute;
+    top:320px;
+    left:50%;
+    margin-left:-555px;
+    z-index:2;
+    }
+
+    .game img:hover{
+
+    transform:scale(1.2,1.2);
+    }
+
+
+    .game01{
+    width:330px;
+    height:auto;
+    display:block;
+
+    float:left;
+    z-index:2;
+    }
+
+    .game02{
+    width:330px;
+    height:auto;
+    display:block;
+    position:relative;
+    left:60px;
+    float:left;
+    z-index:2;
+    }
+
+    .game03{
+    width:330px;
+    height:auto;
+    display:block;
+    position:relative;
+    left:120px;
+    float:left;
+    z-index:2;
+    }
+
+    .footer{
+    width:500px;
+    position:absolute;
+    bottom:100px;
+    left:50%;
+    margin-left:-250px;
+    z-index:3;
+
+    }
+
+    @media only screen and (max-width:1440px){
+        
+    .footer{
+            
+        bottom:-90px;
+        }
+    }
+
+    @media only screen and (max-width:768px){
+    
+    .bk{
+    display:none;
+    }
+    
+    .bk_01{
+    display:block;
+    width:100%;
+    position:absolute;
+    top:100px;
+    z-index:1;
+    }
+    
+    .game{
+    width:720px;
+    top:400px;
+    margin-left:-360px;
+    }
+    
+    .game01{
+    width:240px;
+    position:relative;
+    right:30px;
+    }
+    
+    .game02{
+    width:240px;
+    left:0px;
+    }
+    
+    .game03{
+    width:240px;
+    left:30px;
+    }
+    
+    .footer{
+    width:330px;
+    margin-left:-165px;
+    bottom:200px;
+    }
+    
+    }
+    
+    @media only screen and (max-width:480px){
+    .bk{
+    display:none;
+    }
+    
+    .bk_01{
+    display:none;
+    }
+    
+    .bk_02{
+    display:block;
+    width:100%;
+    position:absolute;
+    margin-left:0px;
+    z-index:1;
+    }
+    
+    .game{
+    width:400px;
+    top:180px;
+    margin-left:-200px;
+    }
+    
+    .game01{
+    width:200px;
+    position:relative;
+    left:110px;
+    float:none;
+    }
+    
+    .game02{
+    width:200px;
+    left:10px;
+    top:30px;
+    
+    }
+    
+    .game03{
+    width:200px;
+    left:10px;
+    top:30px;
+    }
+    
+    .footer{
+    width:200px;
+    margin-left:-100px;
+    bottom:40px;
+    }
+    
+    }
+    
+    
+        @media only screen and (max-width:375px){
+    .bk{
+    display:none;
+    }
+    
+    .bk_01{
+    display:none;
+    }
+    
+    .bk_02{
+    display:block;
+    width:100%;
+    position:absolute;
+    margin-left:0px;
+    z-index:1;
+    }
+    
+    .game{
+    width:350px;
+    top:170px;
+    margin-left:-175px;
+    }
+    
+    .game01{
+    width:170px;
+    position:relative;
+    left:100px;
+    float:none;
+    }
+    
+    .game02{
+    width:170px;
+    left:20px;
+    top:30px;
+    
+    }
+    
+    .game03{
+    width:170px;
+    left:10px;
+    top:30px;
+    }
+    
+    .footer{
+    width:200px;
+    margin-left:-100px;
+    bottom:20px;
+    }
+    
+    }
+    
+    @media only screen and (max-width:375px) and (min-height:812px ){
+        
+    .bk{
+    display:none;
+    }
+    
+    .bk_01{
+    display:none;
+    }
+    
+    .bk_02{
+    display:block;
+    width:380px;
+    position:absolute;
+    top:80px;
+    left:50%;
+    margin-left:-190px;
+    z-index:1;
+    }
+    
+    .game{
+    width:500px;
+    top:220px;
+    margin-left:-240px;
+    }
+    
+    .game01{
+    width:190px;
+    position:relative;
+    left:150px;
+    float:none;
+    }
+    
+    .game02{
+    width:190px;
+    left:50px;
+    top:30px;
+    
+    }
+    
+    .game03{
+    width:190px;
+    left:50px;
+    top:30px;
+    }
+    
+    .footer{
+    width:200px;
+    margin-left:-100px;
+    bottom:80px;
+    }
+    
+    }
+    
+    @media only screen and (max-width:320px){
+    .bk{
+    display:none;
+    }
+    
+    .bk_01{
+    display:none;
+    }
+    
+    .bk_02{
+    display:block;
+    width:320px;
+    position:absolute;
+    left:50%;
+    margin-left:-160px;
+    z-index:1;
+    }
+    
+    .game{
+    width:400px;
+    top:150px;
+    margin-left:-200px;
+    }
+    
+    .game01{
+    width:150px;
+    position:relative;
+    left:130px;
+    float:none;
+    }
+    
+    .game02{
+    width:150px;
+    left:50px;
+    top:30px;
+    
+    }
+    
+    .game03{
+    width:150px;
+    left:50px;
+    top:30px;
+    }
+    
+    .footer{
+    width:180px;
+    margin-left:-90px;
+    bottom:20px;
+    }
+    
+    }
+
+
+
