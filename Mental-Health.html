@@ -1,48 +1,83 @@
 <html>
-    <head>
-        <title>Mental-Health-Solution</title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src=".\aframe-extras-master\dist\aframe-extras.min.js"></script>
-        <script src=".\aframe-extras-master\src\components\sound.js"></script>
-    </head>
-    <body>
-            <a-scene  visible="true">
-                <!-- 添加3D模型 -->
-                <a-assets>
-                    <!-- 加载課室模型 -->
-                    <a-asset-item
-                        id="ClassRoom"
-                        src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"
-                    ></a-asset-item>
-                    <!-- 加载學生模型 -->
-                    <a-asset-item
-                        id="Student"
-                        src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/scene.gltf"
-                    ></a-asset-item>
-                </a-assets>
-            
-                <!-- 显示課室模型 -->
-                <a-gltf-model
-                    position="0 0 0"
-                    scale="1 1 1"
-                    src="#ClassRoom"
-                ></a-gltf-model>
-            
-                <!-- 显示学生模型 -->
-                <a-gltf-model
-                    position="0 -16 -90"
-                    scale="8 8 8"
-                    src="#Student"
-                    animation-mixer="clip: mixamo.com; timeScale: 0.7"
-                ></a-gltf-model>
+
+<head>
+    <title>Mental-Health-Solution</title>
+    <!--Icons-->
+    <link rel="shortcut icon" href="css/index/Medsimlogo.png" type="image/X-icon">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src=".\aframe-extras-master\dist\aframe-extras.min.js"></script>
+    <script src=".\aframe-extras-master\src\components\sound.js"></script>
+</head>
+
+<body>
+    <a-scene id="scene" visible="true" style="display: block;">
+
+        <!-- 場景1：背景介紹圖 -->
+        <a-image src="css/Mental-Health/introduction-background.png" position="0 0 -1" scale="5 5 5" clickable></a-image>
+        <a-image src="css/Mental-Health/introduction-text.png" position="0 1.6 -0.6" scale="1.3 1. 1"></a-image>
+
+        <!-- Button -->
+        <a-image id="animated-image" src="css/Mental-Health/introduction-button.png" position="0 1.6 -0.6"
+            scale="1 1 1" clickable></a-image>
+         <!-- 給與Button動態動態效果 -->
+         <script>
+            //背景介紹圖的時候 隨意點擊會隱藏，然後顯示場景2：
+            var imageEl = document.getElementById('animated-image');
+            var positionValues = ['0 1.6 -0.6', '0 1.8 -0.4']; // 替换为你想要的位置值
+            var currentPositionIndex = 0;
+
+            function animatePosition() {
+                imageEl.setAttribute('position', positionValues[currentPositionIndex]);
+
+                // 切换到下一个位置值
+                currentPositionIndex = (currentPositionIndex + 1) % positionValues.length;
+            }
+
+            setInterval(animatePosition, 1500); // 每隔1秒执行一次动画
+        </script>
+
+    </a-scene>
+
+    <!-- 場景2 : 課室和學生 -->
+    <a-scene id="School" visible="false">
+        <!-- 添加3D模型 -->
+        <a-assets>
+            <!-- 加载課室模型 -->
+            <a-asset-item id="ClassRoom"
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
+            <!-- 加载學生模型 -->
+            <a-asset-item id="Student"
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
+        </a-assets>
+
+        <!-- 显示課室模型 -->
+        <a-gltf-model position="0 0 0" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
+
+        <!-- 显示学生模型 -->
+        <a-gltf-model position="0 -16 -90" scale="8 8 8" src="#Student"
+            animation-mixer="clip: mixamo.com; timeScale: 0.7"></a-gltf-model>
 
 
-                    <!-- 添加攝像頭 -->
-                <a-entity id="cameraRig">
-                    <!-- 運行拖動，但禁止wasd攝像頭移動 -->
-                    <a-camera look-controls="enabled: true" wasd-controls="enabled: false"></a-camera>
-                </a-entity>
-            </a-scene>
-            
-    </body>
+        <!-- 添加攝像頭 -->
+        <a-entity id="cameraRig">
+            <!-- 運行拖動，但禁止wasd攝像頭移動 -->
+            <a-camera look-controls="enabled: false" wasd-controls="enabled: false"></a-camera>
+        </a-entity>
+    </a-scene>
+
+    <script>
+        AFRAME.registerComponent('clickable', {
+            init: function () {
+                var el = this.el;
+                var sceneEl = document.getElementById('scene');
+                var schoolEl = document.getElementById('School');
+
+                el.addEventListener('click', function () {
+                    sceneEl.setAttribute('visible', 'false');
+                    schoolEl.setAttribute('visible', 'true');
+                });
+            }
+        });
+    </script>
+</body>
 </html>

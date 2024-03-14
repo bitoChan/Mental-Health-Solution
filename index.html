@@ -1,45 +1,103 @@
-
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,">
-        <title>Medsim Healthcare Education</title>
-        <link rel = stylesheet media="all and (orientation:portrait)" href = "index.css">
-        <link rel="stylesheet" media="all and (orientation:landscape)" href="landscape.css">
-    </head>
+<html lang="en">
 
-        <body>
-        <h1 style="display:none">消防署火災小遊戲</h1>
-    <div class = "bk">
-        <image alt="" src = "css/Menulogo.png"/>
-        </div>
+<head>
+  <title>關心身邊的同學和朋友 Medsim-Healthcare-Education</title>
+      <!--Icons-->
+      <link rel="shortcut icon" href="css/index/Medsimlogo.png" type="image/X-icon">
+      <link rel="stylesheet" href="css/index/index.css">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src=".\aframe-extras-master\dist\aframe-extras.min.js"></script>
+  <script src=".\aframe-extras-master\src\components\sound.js"></script>
+  <meta property="og:title" content="Orderly Hopeful Eagle" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
 
-    <div class = "game">
-    
-    <div class = "game01">
-    <a title="防火好物採購趣" href = "./1/">
-        <span style="display: none;">防火好物採購趣</span>
-            <image alt="" src = "./img/homepage_game_01.png"/>
-    </a>
-    </div>
-    
-    <div class = "game02">
-        <a title="居家安全診斷" href = "./2/">
-        <span style="display: none;">居家安全診斷</span>
-                    <image alt="" src = "./img/homepage_game_02.png"/>
-        </a>
-    </div>
-    
-    <div class = "game03">
-        <a title="家庭逃生計畫" href = "./3/">
-        <span style="display: none;">家庭逃生計畫</span>
-                    <image alt="" src = "./img/homepage_game_03.png"/>
-        </a>
-    </div>
-    
-    </div>
-    
-    
-    </body>
-    
-    </html>
+  <style data-tag="reset-style-sheet">
+    /* 這是一個重置樣式表，用於消除不同瀏覽器之間的默認樣式差異 */
+  </style>
+  <style data-tag="default-style-sheet">
+    /* 這是默認樣式表，用於設置網頁的基本樣式 */
+  </style>
+
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    data-tag="font" />
+  <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+<body>
+  <!-- A-Frame場景 -->
+  <a-scene id="scene" style="display: block;">
+    <a-camera>
+      <a-entity position="0 0 -1.5" text="align: center;
+                width: 6;
+                wrapCount: 100;
+                color: black;
+                value: Click or tap to Start " hide-on-play="#videoFireworks">
+      </a-entity>
+    </a-camera>
+  </a-scene>
+
+  <!-- 音頻元素 -->
+  <audio id="audio" style="display: none;" loop>
+    <source src="Sound/Menubgm.mp3" type="audio/mp3">
+  </audio>
+
+  <div id="content" >
+    <div class="container">
+      <div class="header">
+          <h1>WebVR 關注身邊同學</h1>
+      </div>
+      <div class="content">
+          <img src="css/index/Menulogo.gif" alt="Tandem Bike" class="central-image">
+          <div class="text-and-button">
+              <h2></h2>
+              <button class="animated-button" onclick="navigateToMentalHealth()">進入</button>
+          </div>
+      </div>
+  </div>
+  </div>
+
+  <script>
+    // 獲取元素
+    var scene = document.getElementById('scene');
+    var audio = document.getElementById('audio');
+    var content = document.getElementById('content');
+    var audioElement = document.getElementById("audio");
+    audioElement.volume = 0.1; // 設置音量為50%
+    // 為場景添加點擊事件
+    scene.addEventListener('click', function () {
+      // 隱藏場景
+      scene.style.display = 'none';
+
+      // 播放音樂
+      audio.style.display = 'block';
+      audio.play();
+
+      // 顯示內容
+      content.style.display = 'block';
+    });
+
+    // 播放音樂函數
+    function playAudio() {
+      // 隱藏場景
+      scene.style.display = 'none';
+
+      // 播放音樂
+      audio.style.display = 'block';
+      audio.play();
+      
+      // 顯示內容
+      content.style.display = 'block';
+    }
+      // 前往 Mental-Health.HTML
+      function navigateToMentalHealth() {
+        window.location.href = "Mental-Health.HTML";
+      }
+  </script>
+</body>
+
+</html>
