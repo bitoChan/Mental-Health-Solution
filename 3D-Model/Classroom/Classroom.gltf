@@ -95,17 +95,17 @@
 				0,
 				-1,
 				0,
-				7.191178432082185e-15
+				2.8251058126037157e-15
 			],
 			"scale":[
 				0.5943891406059265,
-				0.594389021396637,
-				0.5943892002105713
+				0.5943890810012817,
+				0.5943892598152161
 			],
 			"translation":[
-				20.743900299072266,
-				-5.556459903717041,
-				11.435761451721191
+				20.7439022064209,
+				-5.556462287902832,
+				11.435763359069824
 			]
 		},
 		{
@@ -165,7 +165,7 @@
 				0,
 				0,
 				1,
-				4.377216811235485e-08
+				4.423782229423523e-08
 			]
 		},
 		{
@@ -174,20 +174,20 @@
 			],
 			"name":"Sketchfab_model",
 			"rotation":[
-				-0.5020612478256226,
-				-0.4979303777217865,
-				-0.4979303777217865,
-				0.502061128616333
+				-0.5020611882209778,
+				-0.4979303479194641,
+				-0.4979303479194641,
+				0.5020610690116882
 			],
 			"scale":[
-				0.16443884372711182,
-				0.16443884372711182,
-				0.16443873941898346
+				0.6760802865028381,
+				0.6760802865028381,
+				0.6760797500610352
 			],
 			"translation":[
-				-2.2409629821777344,
-				-0.14880287647247314,
-				-1.8476043939590454
+				-8.924583435058594,
+				-0.9020890593528748,
+				-7.6724748611450195
 			]
 		}
 	],
@@ -197,7 +197,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_0.001",
+			"name":"Material_0.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
@@ -211,7 +211,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_1.001",
+			"name":"Material_1.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":1
@@ -225,7 +225,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_2.001",
+			"name":"Material_2.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":2
@@ -239,7 +239,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_3.001",
+			"name":"Material_3.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":3
@@ -253,7 +253,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_4.001",
+			"name":"Material_4.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":4
@@ -267,7 +267,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_5.001",
+			"name":"Material_5.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":5
@@ -281,7 +281,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_6.001",
+			"name":"Material_6.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":6
@@ -295,7 +295,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_7.001",
+			"name":"Material_7.002",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0,
@@ -312,7 +312,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_8.001",
+			"name":"Material_8.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":7
@@ -326,7 +326,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_9.001",
+			"name":"Material_9.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":8
@@ -340,7 +340,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_10.001",
+			"name":"Material_10.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":9
@@ -354,7 +354,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_11.001",
+			"name":"Material_11.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":10
@@ -365,7 +365,7 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Material_12.001",
+			"name":"Material_12.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":11
@@ -379,7 +379,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_13.001",
+			"name":"Material_13.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":12
@@ -393,7 +393,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_14.001",
+			"name":"Material_14.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":13
@@ -407,7 +407,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_15.001",
+			"name":"Material_15.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":14
@@ -421,7 +421,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_16.001",
+			"name":"Material_16.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":15
@@ -435,7 +435,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_17.001",
+			"name":"Material_17.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":16
@@ -449,7 +449,7 @@
 			"extensions":{
 				"KHR_materials_unlit":{}
 			},
-			"name":"Material_18.001",
+			"name":"Material_18.002",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":17
@@ -461,7 +461,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Mesh_0.001",
+			"name":"Mesh_0.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -475,7 +475,7 @@
 			]
 		},
 		{
-			"name":"Mesh_1.001",
+			"name":"Mesh_1.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -489,7 +489,7 @@
 			]
 		},
 		{
-			"name":"Mesh_2.001",
+			"name":"Mesh_2.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -503,7 +503,7 @@
 			]
 		},
 		{
-			"name":"Mesh_3.001",
+			"name":"Mesh_3.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -517,7 +517,7 @@
 			]
 		},
 		{
-			"name":"Mesh_4.001",
+			"name":"Mesh_4.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -531,7 +531,7 @@
 			]
 		},
 		{
-			"name":"Mesh_5.001",
+			"name":"Mesh_5.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -545,7 +545,7 @@
 			]
 		},
 		{
-			"name":"Mesh_6.001",
+			"name":"Mesh_6.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -559,7 +559,7 @@
 			]
 		},
 		{
-			"name":"Mesh_7.001",
+			"name":"Mesh_7.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -573,7 +573,7 @@
 			]
 		},
 		{
-			"name":"Mesh_8.001",
+			"name":"Mesh_8.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -587,7 +587,7 @@
 			]
 		},
 		{
-			"name":"Mesh_9.001",
+			"name":"Mesh_9.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -601,7 +601,7 @@
 			]
 		},
 		{
-			"name":"Mesh_10.001",
+			"name":"Mesh_10.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -615,7 +615,7 @@
 			]
 		},
 		{
-			"name":"Mesh_11.001",
+			"name":"Mesh_11.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -629,7 +629,7 @@
 			]
 		},
 		{
-			"name":"Mesh_12.001",
+			"name":"Mesh_12.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -643,7 +643,7 @@
 			]
 		},
 		{
-			"name":"Mesh_13.001",
+			"name":"Mesh_13.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -657,7 +657,7 @@
 			]
 		},
 		{
-			"name":"Mesh_14.001",
+			"name":"Mesh_14.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -671,7 +671,7 @@
 			]
 		},
 		{
-			"name":"Mesh_15.001",
+			"name":"Mesh_15.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -685,7 +685,7 @@
 			]
 		},
 		{
-			"name":"Mesh_16.001",
+			"name":"Mesh_16.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -699,7 +699,7 @@
 			]
 		},
 		{
-			"name":"Mesh_17.001",
+			"name":"Mesh_17.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -713,7 +713,7 @@
 			]
 		},
 		{
-			"name":"Mesh_18.001",
+			"name":"Mesh_18.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -727,7 +727,7 @@
 			]
 		},
 		{
-			"name":"Mesh_19.001",
+			"name":"Mesh_19.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -741,7 +741,7 @@
 			]
 		},
 		{
-			"name":"Mesh_20.001",
+			"name":"Mesh_20.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -755,7 +755,7 @@
 			]
 		},
 		{
-			"name":"Mesh_21.001",
+			"name":"Mesh_21.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -769,7 +769,7 @@
 			]
 		},
 		{
-			"name":"Mesh_22.001",
+			"name":"Mesh_22.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -783,7 +783,7 @@
 			]
 		},
 		{
-			"name":"Mesh_23.001",
+			"name":"Mesh_23.002",
 			"primitives":[
 				{
 					"attributes":{
@@ -797,7 +797,7 @@
 			]
 		},
 		{
-			"name":"Mesh_24.001",
+			"name":"Mesh_24.002",
 			"primitives":[
 				{
 					"attributes":{
