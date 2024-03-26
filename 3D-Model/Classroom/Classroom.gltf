@@ -889,77 +889,77 @@
 		{
 			"mimeType":"image/png",
 			"name":"Image_0",
-			"uri":"Image_0.png"
+			"uri":"texture/Image_0.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_1",
-			"uri":"Image_1.png"
+			"uri":"texture/Image_1.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_2",
-			"uri":"Image_2.png"
+			"uri":"texture/Image_2.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_3",
-			"uri":"Image_3.png"
+			"uri":"texture/Image_3.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_4",
-			"uri":"Image_4.png"
+			"uri":"texture/Image_4.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_5",
-			"uri":"Image_5.png"
+			"uri":"texture/Image_5.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_6",
-			"uri":"Image_6.png"
+			"uri":"texture/Image_6.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_7",
-			"uri":"Image_7.png"
+			"uri":"texture/Image_7.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_8",
-			"uri":"Image_8.png"
+			"uri":"texture/Image_8.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_9",
-			"uri":"Image_9.png"
+			"uri":"texture/Image_9.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_10",
-			"uri":"Image_10.png"
+			"uri":"texture/Image_10.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_11",
-			"uri":"Image_11.png"
+			"uri":"texture/Image_11.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_12",
-			"uri":"Image_12.png"
+			"uri":"texture/Image_12.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_13",
-			"uri":"Image_13.png"
+			"uri":"texture/Image_13.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"Image_14",
-			"uri":"Image_14.png"
+			"uri":"texture/Image_14.png"
 		}
 	],
 	"accessors":[
