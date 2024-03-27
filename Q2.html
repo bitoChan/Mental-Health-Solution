@@ -35,9 +35,9 @@
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
         </a-assets>
 
-        <a-gltf-model position="0 0 0" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
-        <a-gltf-model position="0 -16 -90" scale="8 8 8" src="#Student"
-            animation-mixer="clip: mixamo.com; timeScale: 0.7"></a-gltf-model>
+        <a-gltf-model position="80 0 -20" scale="1.2 0.9 1" rotation="0 90 0" src="#ClassRoom" gltf-model=""></a-gltf-model>
+        <a-gltf-model position="0 -7 -30" scale="35 40 35" src="#Student"
+        animation-mixer="clip: mixamo.com; timeScale: 0.8"></a-gltf-model>
 
         <!-- 添加Q1 選擇關心同學和-->
         <a-assets id="group1" visible="true">
@@ -80,7 +80,7 @@
             schoolEl.setAttribute('visible', 'true');
             startButton.style.display = 'none'; // 隐藏开始按钮
 
-            var audio = new Audio("Sound/Crying.mp3");
+            var audio = new Audio("Sound/Sobbing.mp3");
             audio.loop = true; // 设置音频为循环播放
             audio.play();
 
