@@ -40,27 +40,21 @@
             <a-asset-item id="Q1"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Q1-concernornot/Q1.gltf"></a-asset-item>
         </a-assets>
+        <!-- 控制在500kb以内的模型，以減少緩衝時間，因此scale的倍數會非常大-->
         <a-entity>
-
-            <a-gltf-model position="0.05 1.5 0" scale="150 150 150" src="#ClassRoom"></a-gltf-model>
-            <a-gltf-model position="0.1 1.55 0" scale="110 120 110" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.8" ></a-gltf-model>
-            <a-gltf-model position="0 0 15" scale="1 1 1" src="#Q1"></a-gltf-model>
-            <a-plane id="img1-bg" color="white" position="-2.55 0.48 -5" width="1.1" height="1.1" scale="2 2 2"
+            <a-gltf-model position="0.05 1.5 0.2" scale="150 150 150" src="#ClassRoom" ></a-gltf-model>
+            <a-gltf-model position="0.03 1.55 0.2" scale="110 120 110" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.8" ></a-gltf-model>
+            <a-gltf-model position="0.01 1.53 0.07" scale="180 180 120" src="#Q1" ></a-gltf-model>
+            <a-plane id="img1-bg" color="white" position="-0.24 1.5 -0.4" width="1.1" height="1.1" scale="0.09 0.09 0.1"
                 class="hideable"
-                hover-effect-group="targetId: img1; scale: 2.5 2.5 2.5; colorHover: blue; colorOriginal: white"
+                hover-effect-group="targetId: img1; scale: 0.1 0.1 0.1; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-            <a-plane id="img2-bg" color="white" position="2.55 0.48 -5" width="1.1" height="1.1" scale="2 2 2"
+            <a-plane id="img2-bg" color="white" position="0.24 1.5 -0.4" width="1.1" height="1.1" scale="0.09 0.09 0.1"
                 class="hideable"
-                hover-effect-group="targetId: img2; scale: 2.5 2.5 2.5; colorHover: blue; colorOriginal: white"
+                hover-effect-group="targetId: img2; scale: 0.1 0.1 0.1; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-            <a-image id="img1" src="3D-Model/Q1-concernornot/無視.png" scale="2 2 2" position="-2.5 0.5 -4.9"
-                class="hideable"
-                hover-effect-group="targetId: img1-bg; scale: 2.5 2.5 2.5; colorHover: blue; colorOriginal: white"
-                visible="false" link-on-click="url: Q1-NO.html"></a-image>
-            <a-image id="img2" src="3D-Model/Q1-concernornot/關心.png" scale="2 2 2" position="2.5 0.5 -4.9"
-                class="hideable"
-                hover-effect-group="targetId: img2-bg; scale: 2.5 2.5 2.5 colorHover: blue; colorOriginal: white"
-                visible="false" link-on-click="url: Q1-YES.html"></a-image>
+                <a-image id="img1" src="3D-Model/Q1-concernornot/無視.png" scale="0.09 0.09 0.1" position="-0.24 1.5 -0.4" class="hideable" hover-effect-group="targetId: img1-bg; scale: 0.15 0.15 0.15; colorHover: blue; colorOriginal: white" visible="false" link-on-click="url: Q1-NO.html" material geometry></a-image>
+                <a-image id="img2" src="3D-Model/Q1-concernornot/關心.png" scale="0.09 0.09 0.1" position="0.24 1.5 -0.4" class="hideable" hover-effect-group="targetId: img2-bg; scale: 0.15 0.15 0.15 colorHover: blue; colorOriginal: white" visible="false" link-on-click="url: Q1-YES.html" material geometry></a-image>
         </a-entity>
 
         <a-entity camera look-controls="enabled: false" wasd-controls="enabled: false"></a-entity>
@@ -128,7 +122,7 @@
         //這個部分控制button的動態效果
         AFRAME.registerComponent('hover-effect-group', {
             schema: {
-                scale: { default: '2.5 2.5 2.5' }, // 鼠标悬停时的放大尺寸
+                scale: { default: '0.001 0.001 0.001 ' }, // 鼠标悬停时的放大尺寸
                 targetId: { default: '' }, // 目标图片ID
                 colorHover: { default: 'blue' }, // 悬停时的背景颜色
                 colorOriginal: { default: 'white' } // 原始背景颜色
@@ -146,11 +140,11 @@
                 };
 
                 const onMouseLeave = () => {
-                    el.setAttribute('scale', '2 2 2');
+                    el.setAttribute('scale', '0.09 0.09 0.09');
                     if (el.tagName.toLowerCase() === 'a-plane') {
                         el.setAttribute('material', 'color', this.data.colorOriginal);
                     }
-                    target.setAttribute('scale', '2 2 2');
+                    target.setAttribute('scale', '0.1 0.1 0.1');
                 };
 
                 // 监听当前元素（背景或图片）的mouseenter和mouseleave事件
