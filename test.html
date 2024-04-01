@@ -1,0 +1,31 @@
+<html lang="zh-Hant">
+
+<head>
+    <title>Mental-Health-Solution</title>
+    <!--顯示繁體中文-->
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 设置网页图标 -->
+    <link rel="shortcut icon" href="css/index/Medsimlogo.png" type="image/X-icon">
+    <!-- 引入 A-Frame 和附加组件 -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="./aframe-extras-master/dist/aframe-extras.min.js"></script>
+    <script src="./aframe-extras-master/src/components/sound.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
+    <!-- CSS样式 -->
+    <link rel="stylesheet" href="css\Mental-Health\style.css">
+
+</head>
+<body>
+    <a-scene id="School" visible="true" cursor="rayOrigin: mouse">
+        <a-assets>
+            <a-asset-item id="ClassRoom"
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
+            <a-asset-item id="Student"
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
+        </a-assets>
+        <a-entity>
+
+            <a-gltf-model position="0 0 0" scale="100 100 100" src="#ClassRoom"></a-gltf-model>
+            <a-gltf-model position="0 -16 -90" scale="75 75 75" src="#Student"></a-gltf-model>
+        </a-entity>
+</body>

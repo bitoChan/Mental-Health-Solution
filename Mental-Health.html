@@ -29,8 +29,8 @@
     <!-- 第二个场景：学校 -->
     <a-scene id="School" visible="false" cursor="rayOrigin: mouse">
         <a-assets>
-            <a-asset-item id="ClassRoom"
-                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
+            <a-asset-item id="ClassRoom" 
+            src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
             <a-asset-item id="Student"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
         </a-assets>
@@ -42,9 +42,8 @@
         </a-assets>
         <a-entity>
 
-            <a-gltf-model position="0 0 0" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
-            <a-gltf-model position="0 -16 -90" scale="8 8 8" src="#Student"
-                animation-mixer="clip: mixamo.com; timeScale: 0.8"></a-gltf-model>
+            <a-gltf-model position="0.05 1.5 0" scale="150 150 150" src="#ClassRoom"></a-gltf-model>
+            <a-gltf-model position="0.1 1.55 0" scale="110 120 110" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.8" ></a-gltf-model>
             <a-gltf-model position="0 0 15" scale="1 1 1" src="#Q1"></a-gltf-model>
             <a-plane id="img1-bg" color="white" position="-2.55 0.48 -5" width="1.1" height="1.1" scale="2 2 2"
                 class="hideable"
@@ -68,13 +67,13 @@
 
     </a-scene>
     <script>
-        // 页面加载后，5秒后显示开始按钮
+        // 页面加载后，10秒后显示开始按钮
         setTimeout(function () {
             var startButton = document.querySelector('.start-button');
             if (startButton) {
                 startButton.style.display = 'block'; // 显示开始按钮
             }
-        }, 10000); // 10秒后执行
+        }, 1000); // 10秒后执行
 
         // 开始体验的函数，隐藏主场景，显示学校场景，并隐藏开始按钮
         function startExperience() {
@@ -97,7 +96,7 @@
                 document.getElementById('img2-bg').setAttribute('visible', 'true');
                 document.getElementById('img1').setAttribute('visible', 'true');
                 document.getElementById('img2').setAttribute('visible', 'true');
-            }, 20000); // 10秒倒计时
+            }, 1000); // 10秒倒计时
         }
         // 注册一个组件来处理场景变换
         AFRAME.registerComponent('change-scene', {

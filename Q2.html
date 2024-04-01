@@ -12,16 +12,16 @@
     <script src="./aframe-extras-master/src/components/sound.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
     <!-- CSS样式 -->
-    <link rel="stylesheet" href="css\Mental-Health\style.css">
+    <link rel="stylesheet" href="css\Q1\style.css">
 
 </head>
 
 <body>
     <!-- 主场景 -->
     <a-scene id="scene" visible="true">
-        <a-image src="css/Mental-Health/introduction-background.png" position="0 0 -1" scale="5 5 5"
+        <a-image src="css/Q1/introduction-background.png" position="0 0 -1" scale="5 5 5"
             class="clickable"></a-image>
-        <a-image src="css/Mental-Health/introduction-text.png" position="0 1.6 -0.6" scale="1.3 1 1"></a-image>
+        <a-image src="css/Q1/introduction-text.png" position="0 1.6 -0.6" scale="1.3 1 1"></a-image>
         <!-- 在 A-Frame 外部添加一个 HTML按钮 -->
         <button class="start-button" onclick="startExperience()" style="display:none;">開始</button>
     </a-scene>
@@ -35,17 +35,10 @@
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
         </a-assets>
 
-<<<<<<< Updated upstream
-        <a-gltf-model position="0 0 0" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
-        <a-gltf-model position="0 -16 -90" scale="8 8 8" src="#Student"
-            animation-mixer="clip: mixamo.com; timeScale: 0.7"></a-gltf-model>
-
-=======
->>>>>>> Stashed changes
         <!-- 添加Q1 選擇關心同學和-->
         <a-assets id="group1" visible="true">
             <a-asset-item id="Q1"
-                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Q1-concernornot/Q1.gltf"></a-asset-item>
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Q2"></a-asset-item>
         </a-assets>
         <!-- 控制在500kb以内的模型，以減少緩衝時間，因此scale的倍數會非常大-->
         <a-entity>
@@ -87,7 +80,7 @@
             schoolEl.setAttribute('visible', 'true');
             startButton.style.display = 'none'; // 隐藏开始按钮
 
-            var audio = new Audio("Sound/Crying.mp3");
+            var audio = new Audio("Sound/Sobbing.mp3");
             audio.loop = true; // 设置音频为循环播放
             audio.play();
 
