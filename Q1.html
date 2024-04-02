@@ -32,12 +32,11 @@
             <a-asset-item id="ClassRoom"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
             <a-asset-item id="Student"
-                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/scene.gltf"></a-asset-item>
         </a-assets>
 
         <a-gltf-model position="0 0 0" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
-        <a-gltf-model position="0 -16 -90" scale="8 8 8" src="#Student"
-            animation-mixer="clip: mixamo.com; timeScale: 0.7"></a-gltf-model>
+        <a-gltf-model position="0 -1.5 -13" scale="1 1.2 1" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.7" ></a-gltf-model>
 
         <!-- 添加Q1 選擇關心同學和-->
         <a-assets id="group1" visible="true">
@@ -45,22 +44,22 @@
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Q1-concernornot/Q1.gltf"></a-asset-item>
         </a-assets>
         <a-entity>
-            <a-gltf-model position="0 0 15" scale="1 1 1" src="#Q1"></a-gltf-model>
-            <a-plane id="img1-bg" color="white" position="-2.55 0.48 -5" width="1.1" height="1.1" scale="2 2 2"
+            <a-gltf-model position="0.5 0 50" scale="0.2 0.2 1" src="#Q1" ></a-gltf-model>
+            <a-plane id="img1-bg" color="white" position="-2.55 1.48 -5" width="1.1" height="1.1" scale="1.15 1.15 1.5"
                 class="hideable"
-                hover-effect-group="targetId: img1; scale: 2.5 2.5 2.5; colorHover: blue; colorOriginal: white"
+                hover-effect-group="targetId: img1; scale: 2 2 2; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-            <a-plane id="img2-bg" color="white" position="2.55 0.48 -5" width="1.1" height="1.1" scale="2 2 2"
+            <a-plane id="img2-bg" color="white" position="2.55 1.48 -5" width="1.1" height="1.1" scale="1.15 1.15 1.5"
                 class="hideable"
-                hover-effect-group="targetId: img2; scale: 2.5 2.5 2.5; colorHover: blue; colorOriginal: white"
+                hover-effect-group="targetId: img2; scale: 2 2 2; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-            <a-image id="img1" src="3D-Model/Q1-concernornot/無視.png" scale="2 2 2" position="-2.5 0.5 -4.9"
+            <a-image id="img1" src="3D-Model/Q1-concernornot/無視.png" scale="1.15 1.15 1.5" position="-2.5 1.5 -4.9"
                 class="hideable"
-                hover-effect-group="targetId: img1-bg; scale: 2.5 2.5 2.5; colorHover: blue; colorOriginal: white"
+                hover-effect-group="targetId: img1-bg; scale: 2 2 2; colorHover: blue; colorOriginal: white"
                 visible="false" link-on-click="url: Q1-NO.html"></a-image>
-            <a-image id="img2" src="3D-Model/Q1-concernornot/關心.png" scale="2 2 2" position="2.5 0.5 -4.9"
+            <a-image id="img2" src="3D-Model/Q1-concernornot/關心.png" scale="1.15 1.15 1.2" position="2.5 1.5 -4.9"
                 class="hideable"
-                hover-effect-group="targetId: img2-bg; scale: 2.5 2.5 2.5 colorHover: blue; colorOriginal: white"
+                hover-effect-group="targetId: img2-bg; scale: 2 2 2 colorHover: blue; colorOriginal: white"
                 visible="false" link-on-click="url: Q1-YES.html"></a-image>
         </a-entity>
 
@@ -68,7 +67,14 @@
 
     </a-scene>
     <script>
-        // 开始体验的函数，隐藏主场景，显示学校场景，并隐藏开始按钮
+        
+        setTimeout(function () {
+            var startButton = document.querySelector('.start-button');
+            if (startButton) {
+                startButton.style.display = 'block'; // 显示开始按钮
+            }
+        }, 10000); // 10秒后执行
+
         // 开始体验的函数，隐藏主场景，显示学校场景，并隐藏开始按钮
         function startExperience() {
             var sceneEl = document.getElementById('scene');
@@ -124,7 +130,7 @@
         //這個部分控制button的動態效果
         AFRAME.registerComponent('hover-effect-group', {
             schema: {
-                scale: { default: '2.5 2.5 2.5' }, // 鼠标悬停时的放大尺寸
+                scale: { default: '2 2 2' }, // 鼠标悬停时的放大尺寸
                 targetId: { default: '' }, // 目标图片ID
                 colorHover: { default: 'blue' }, // 悬停时的背景颜色
                 colorOriginal: { default: 'white' } // 原始背景颜色
@@ -142,11 +148,11 @@
                 };
 
                 const onMouseLeave = () => {
-                    el.setAttribute('scale', '2 2 2');
+                    el.setAttribute('scale', '1.15 1.15 1.15');
                     if (el.tagName.toLowerCase() === 'a-plane') {
                         el.setAttribute('material', 'color', this.data.colorOriginal);
                     }
-                    target.setAttribute('scale', '2 2 2');
+                    target.setAttribute('scale', '1.15 1.15 1.15');
                 };
 
                 // 监听当前元素（背景或图片）的mouseenter和mouseleave事件

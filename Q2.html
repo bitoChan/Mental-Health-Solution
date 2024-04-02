@@ -32,7 +32,7 @@
             <a-asset-item id="ClassRoom" 
             src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
             <a-asset-item id="Student"
-                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf"></a-asset-item>
+                src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/scene.gltf"></a-asset-item>
         </a-assets>
 
         <!-- 添加Q1 選擇關心同學和-->
@@ -42,9 +42,9 @@
         </a-assets>
         <!-- 控制在500kb以内的模型，以減少緩衝時間，因此scale的倍數會非常大-->
         <a-entity>
-            <a-gltf-model position="0.05 1.5 0.2" scale="150 150 150" src="#ClassRoom" ></a-gltf-model>
-            <a-gltf-model position="0.03 1.55 0.2" scale="110 120 110" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.9" ></a-gltf-model>
-            <a-gltf-model position="0.01 1.53 0.07" scale="180 180 120" src="#Q1" ></a-gltf-model>
+            <a-gltf-model rotation="0 90 0" position="12.5 0 -1" scale="1 1 1" src="#ClassRoom" ></a-gltf-model>
+            <a-gltf-model position="0 -1 -5" scale="0.7 0.9 1" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.7" ></a-gltf-model>
+            <a-gltf-model position="-0.5 1.53 -0.4" scale="200 200 120" src="#Q1" ></a-gltf-model>
             <a-plane id="img1-bg" color="white" position="-0.247 1.5 -0.41" width="1.1" height="1.1" scale="0.09 0.09 0.1"
                 class="hideable"
                 hover-effect-group="targetId: img1; scale: 0.1 0.1 0.1; colorHover: blue; colorOriginal: white"
@@ -53,21 +53,21 @@
                 class="hideable"
                 hover-effect-group="targetId: img2; scale: 0.1 0.1 0.1; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-                <a-image id="img1" src="3D-Model\Q2-concernornot\過一日萬一日.jpg" scale="0.09 0.09 0.1" position="-0.241 1.503 -0.4" class="hideable" hover-effect-group="targetId: img1-bg; scale: 0.1 0.1 0.1; colorHover: blue; colorOriginal: white" visible="false" link-on-click="url: Q2-NO.html" material geometry></a-image>
-                <a-image id="img2" src="3D-Model\Q2-concernornot\準備溫書材料.jpg" scale="0.09 0.09 0.1" position="0.241 1.503 -0.4" class="hideable" hover-effect-group="targetId: img2-bg; scale: 0.1 0.1 0.1 colorHover: blue; colorOriginal: white" visible="false" link-on-click="url: Q2-YES.html" material geometry></a-image>
+                <a-image id="img1" src="3D-Model\Q2-concernornot\準備溫書材料.jpg" scale="0.09 0.09 0.1" position="-0.241 1.503 -0.4" class="hideable" hover-effect-group="targetId: img1-bg; scale: 0.1 0.1 0.1; colorHover: blue; colorOriginal: white" visible="false" link-on-click="url: Q2-YES.html" material geometry></a-image>
+                <a-image id="img2" src="3D-Model\Q2-concernornot\過一日萬一日.jpg" scale="0.09 0.09 0.1" position="0.241 1.503 -0.4" class="hideable" hover-effect-group="targetId: img2-bg; scale: 0.1 0.1 0.1 colorHover: blue; colorOriginal: white" visible="false" link-on-click="url: Q2-NO.html" material geometry></a-image>
         </a-entity>
 
         <a-entity camera look-controls="enabled: false" wasd-controls="enabled: false"></a-entity>
 
     </a-scene>
     <script>
-        // 页面加载后，10秒后显示开始按钮
+
         setTimeout(function () {
             var startButton = document.querySelector('.start-button');
             if (startButton) {
                 startButton.style.display = 'block'; // 显示开始按钮
             }
-        }, 1000); // 10秒后执行
+        }, 10000); // 10秒后执行
 
         // 开始体验的函数，隐藏主场景，显示学校场景，并隐藏开始按钮
         function startExperience() {
@@ -90,7 +90,7 @@
                 document.getElementById('img2-bg').setAttribute('visible', 'true');
                 document.getElementById('img1').setAttribute('visible', 'true');
                 document.getElementById('img2').setAttribute('visible', 'true');
-            }, 1000); // 10秒倒计时
+            }, 10000); // 10秒倒计时
         }
         // 注册一个组件来处理场景变换
         AFRAME.registerComponent('change-scene', {
