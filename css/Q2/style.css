@@ -13,3 +13,6 @@
     font-weight: bold;/* 加粗字體 */
     border-radius: 10px; /* 設置圓角半徑為 10px */
 }
+#aframeCanvas {
+    filter: brightness(160%);
+  }
