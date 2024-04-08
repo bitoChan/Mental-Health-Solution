@@ -23,7 +23,7 @@
             class="clickable"></a-image>
         <a-image src="css/Q1/introduction-text.png" position="0 1.6 -0.6" scale="1.3 1 1"></a-image>
         <!-- 在 A-Frame 外部添加一个 HTML按钮 -->
-        <button class="start-button" onclick="startExperience()">開始</button>
+        <button class="start-button" onclick="startExperience()" style="display:none;">開始</button>
     </a-scene>
 
     <!-- 第二个场景：学校 -->
@@ -36,7 +36,7 @@
         </a-assets>
 
         <a-gltf-model position="0 0 0" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
-        <a-gltf-model position="0 -1.5 -13" scale="1 1.2 1" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.7" ></a-gltf-model>
+        <a-gltf-model position="0 -1.5 -5" scale="1 1.1 1" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.7" ></a-gltf-model>
 
         <!-- 添加Q1 選擇關心同學和-->
         <a-assets id="group1" visible="true">
@@ -44,20 +44,20 @@
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Q1-concernornot/Q1.gltf"></a-asset-item>
         </a-assets>
         <a-entity>
-            <a-gltf-model position="0.5 0 50" scale="0.2 0.2 1" src="#Q1" ></a-gltf-model>
-            <a-plane id="img1-bg" color="white" position="-2.55 1.48 -5" width="1.1" height="1.1" scale="1.15 1.15 1.5"
+            <a-gltf-model position="-0.5 0 55" scale="0.2 0.2 1" src="#Q1" ></a-gltf-model>
+            <a-plane id="img1-bg" color="white" position="-2.55 1.28 -5" width="1.1" height="1.1" scale="1.15 1.15 1.5"
                 class="hideable"
                 hover-effect-group="targetId: img1; scale: 2 2 2; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-            <a-plane id="img2-bg" color="white" position="2.55 1.48 -5" width="1.1" height="1.1" scale="1.15 1.15 1.5"
+            <a-plane id="img2-bg" color="white" position="2.55 1.28 -5" width="1.1" height="1.1" scale="1.15 1.15 1.5"
                 class="hideable"
                 hover-effect-group="targetId: img2; scale: 2 2 2; colorHover: blue; colorOriginal: white"
                 visible="false"></a-plane>
-            <a-image id="img1" src="3D-Model/Q1-concernornot/無視.png" scale="1.15 1.15 1.5" position="-2.5 1.5 -4.9"
+            <a-image id="img1" src="3D-Model/Q1-concernornot/無視.png" scale="1.15 1.15 1.5" position="-2.5 1.3 -4.9"
                 class="hideable"
                 hover-effect-group="targetId: img1-bg; scale: 2 2 2; colorHover: blue; colorOriginal: white"
                 visible="false" link-on-click="url: Q1-NO.html"></a-image>
-            <a-image id="img2" src="3D-Model/Q1-concernornot/關心.png" scale="1.15 1.15 1.2" position="2.5 1.5 -4.9"
+            <a-image id="img2" src="3D-Model/Q1-concernornot/關心.png" scale="1.15 1.15 1.2" position="2.5 1.3 -4.9"
                 class="hideable"
                 hover-effect-group="targetId: img2-bg; scale: 2 2 2 colorHover: blue; colorOriginal: white"
                 visible="false" link-on-click="url: Q1-YES.html"></a-image>
@@ -67,7 +67,7 @@
 
     </a-scene>
     <script>
-        
+
         setTimeout(function () {
             var startButton = document.querySelector('.start-button');
             if (startButton) {
@@ -175,6 +175,34 @@
                 });
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        // 检测是否为iOS设备
+        var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // 如果是iOS设备，调整亮度
+        if (isiOS) {
+            var schoolScene = document.getElementById('School');
+            if (schoolScene) {
+                // 假设你的场景中已有环境光源，我们将会调整它的亮度
+                // 如果没有，你需要添加一个。以下是如何调整亮度的示例
+                
+                // 查找环境光源元素
+                var ambientLight = schoolScene.querySelector('[light][type="ambient"]');
+                if (ambientLight) {
+                    // 增加环境光的亮度
+                    ambientLight.setAttribute('light', 'intensity', 1.5); // 亮度值可以根据需要调整
+                } else {
+                    // 如果场景中没有环境光源，创建一个并设置亮度
+                    var newAmbientLight = document.createElement('a-light');
+                    newAmbientLight.setAttribute('type', 'ambient');
+                    newAmbientLight.setAttribute('color', '#FFF'); // 白色光源
+                    newAmbientLight.setAttribute('intensity', 1.5); // 亮度值可以根据需要调整
+                    schoolScene.appendChild(newAmbientLight);
+                }
+            }
+        }
+    });
     </script>
 </body>
 
