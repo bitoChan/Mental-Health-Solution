@@ -12,7 +12,7 @@
     <script src="./aframe-extras-master/src/components/sound.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
     <!-- CSS样式 -->
-    <link rel="stylesheet" href="css\Q2\style.css">
+    <link rel="stylesheet" href="css\Q1\style.css">
 
 </head>
 
@@ -20,22 +20,24 @@
     <!-- 主场景 -->
     <a-scene id="scene" visible="true">
         <a-image src="css/Q2/introduction-background.png" position="0 0 -1" scale="5 5 5" class="clickable"></a-image>
-        <a-image src="css/Q2/introduction-text.jpg" position="0 1.6 -0.6" scale="1.3 1 1"></a-image>
+        <a-image src="css/Q2/introduction-text.png" position="0 1.6 -0.6" scale="1.3 1 1"></a-image>
         <!-- 在 A-Frame 外部添加一个 HTML按钮 -->
         <button class="start-button" onclick="startExperience()" style="display:none;">開始</button>
     </a-scene>
 
     <!-- 第二个场景：学校 -->
-    <a-scene id="School" visible="false" cursor="rayOrigin: mouse">
+    <a-scene id="School" visible="false" cursor="rayOrigin: mouse" renderer="colorManagement: true; gammaOutput: true;">
         <a-assets>
             <a-asset-item id="ClassRoom"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
             <a-asset-item id="Student"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/scene.gltf"></a-asset-item>
         </a-assets>
+
         <a-gltf-model rotation="0 90 0" position="12.5 0 -1" scale="1 1 1" src="#ClassRoom"></a-gltf-model>
         <a-gltf-model position="0 -1 -4.15" scale="0.7 0.9 1" src="#Student"
             animation-mixer="clip: mixamo.com; timeScale: 0.7"></a-gltf-model>
+
         <!-- 添加Q1 選擇關心同學和-->
         <a-assets id="group1" visible="true">
             <a-asset-item id="Q1"
@@ -98,23 +100,6 @@
                 document.getElementById('img2').setAttribute('visible', 'true');
             }, 10000); // 10秒倒计时
         }
-        // 注册一个组件来处理场景变换
-        AFRAME.registerComponent('change-scene', {
-            init: function () {
-                this.el.addEventListener('click', () => {
-                    // 隐藏group1
-                    const group = document.querySelector('#group1');
-                    if (group) {
-                        group.setAttribute('visible', 'false');
-                    }
-                    // 显示Flowpath.png图像
-                    const flowpathImage = document.querySelector('#flowpath-display');
-                    if (flowpathImage) {
-                        flowpathImage.setAttribute('visible', 'true');
-                    }
-                });
-            }
-        });
 
         // 禁用摄像头的查看控制
         AFRAME.registerComponent('disable-look', {
