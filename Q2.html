@@ -168,6 +168,28 @@
                 });
             }
         });
+
+        
+        document.addEventListener('DOMContentLoaded', function () {
+    // 检测是否为iOS设备
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    // 如果是iOS设备，调整模型的亮度
+    if (isIOS) {
+        // 获取模型元素
+        var model = document.querySelector('a-gltf-model[src="#Student"]');
+
+        // 为了简化，这里我们假设增加环境光源的亮度可以解决问题
+        // 创建一个新的环境光元素
+        var light = document.createElement('a-light');
+        light.setAttribute('type', 'ambient');
+        light.setAttribute('color', '#fff');
+        light.setAttribute('intensity', 1.2); // 调整这个值以达到期望的亮度
+
+        // 将光源添加到场景中
+        model.sceneEl.appendChild(light);
+    }
+});
     </script>
 </body>
 
