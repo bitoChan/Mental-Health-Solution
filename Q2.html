@@ -34,7 +34,8 @@
             <a-asset-item id="Student"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/scene.gltf"></a-asset-item>
         </a-assets>
-
+        <a-gltf-model rotation="0 90 0" position="12.5 0 -1" scale="1 1 1" src="#ClassRoom" ></a-gltf-model>
+        <a-gltf-model position="0 -1 -4.15" scale="0.7 0.9 1" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.7" ></a-gltf-model>
         <!-- 添加Q1 選擇關心同學和-->
         <a-assets id="group1" visible="true">
             <a-asset-item id="Q1"
@@ -42,8 +43,6 @@
         </a-assets>
         <!-- 縮減模型大小，以減少緩衝時間，因此scale的倍數會非常大-->
         <a-entity>
-            <a-gltf-model rotation="0 90 0" position="12.5 0 -1" scale="1 1 1" src="#ClassRoom" ></a-gltf-model>
-            <a-gltf-model position="0 -1 -4.15" scale="0.7 0.9 1" src="#Student" animation-mixer="clip: mixamo.com; timeScale: 0.7" ></a-gltf-model>
             <a-gltf-model position="-0.5 1.5 -0.2" scale="230 230 120" src="#Q1" ></a-gltf-model>
             <a-plane id="img1-bg" color="white" position="-0.247 1.5 -0.41" width="1.1" height="1.1" scale="0.09 0.09 0.1"
                 class="hideable"
