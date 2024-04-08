@@ -27,7 +27,7 @@
     </a-scene>
 
     <!-- 第二个场景：学校 -->
-    <a-scene id="School" visible="false" cursor="rayOrigin: mouse">
+    <a-scene id="School" visible="false" cursor="rayOrigin: mouse" renderer="colorManagement: true; gammaOutput: true;">
         <a-assets>
             <a-asset-item id="ClassRoom"
                 src="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf"></a-asset-item>
@@ -183,19 +183,20 @@
     // 如果是iOS设备，调整模型的亮度
     if (isIOS) {
         // 获取模型元素
-        var model = document.querySelector('a-gltf-model[src="#Student"]');
+        var model = document.querySelector('a-gltf-model[src="#Q1"]');
 
         // 为了简化，这里我们假设增加环境光源的亮度可以解决问题
         // 创建一个新的环境光元素
         var light = document.createElement('a-light');
         light.setAttribute('type', 'ambient');
         light.setAttribute('color', '#fff');
-        light.setAttribute('intensity', 1.1); // 调整这个值以达到期望的亮度
+        light.setAttribute('intensity', 1.7); // 调整这个值以达到期望的亮度
 
         // 将光源添加到场景中
         model.sceneEl.appendChild(light);
     }
 });
+
     </script>
 </body>
 
