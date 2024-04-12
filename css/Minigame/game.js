@@ -1,15 +1,16 @@
 $(document).ready(function() {
   var score = 0; // 游戏得分
 
-  // 加分图片URLs
+  // 加分图片URLs,圖片來源皆來自いらすとや插圖屋，并且插圖並沒有做出任何的修改
   var positiveImages = [
-      "https://drive.google.com/file/d/1zxaVmtBPAi8eu13Om2VIjFkusgKNswrf/view?usp=drive_link",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E4%B8%80%E9%BD%8A%E9%9D%A2%E5%B0%8D.png?raw=true",
+      ,
       // 添加其他加分图片URL
   ];
 
   // 不加分图片URLs
   var negativeImages = [
-      "https://drive.google.com/file/d/1KzX3egNhswVXClcih6CwGUpbMP127WoV/view?usp=drive_link"
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%8A%A0%E6%B2%B9%E5%8A%AA%E5%8A%9B.png?raw=true",
       // 添加其他不加分图片URL
   ];
 
@@ -22,7 +23,7 @@ $(document).ready(function() {
   function dropBox() {
       var length = random(100, $(".game").width() - 100);
       var velocity = random(9000, 10000);
-      var size = random(100, 150);
+      var size = random(350, 400);
       var thisBox = $("<div/>", {
           class: "box",
           style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
@@ -61,7 +62,7 @@ $(document).ready(function() {
   });
   
     var runGame = setInterval(function () {
-      for (i = 0; i < 3; i++) { // 同时出现的箱子数量，可修改6来控制
+      for (i = 0; i < 4; i++) { // 同时出现的箱子数量，可修改6来控制
         dropBox();
       }
     }, 5000); // 游戏循环的间隔时间，可修改5000来调整间隔
