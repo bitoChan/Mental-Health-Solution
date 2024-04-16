@@ -4,7 +4,7 @@ AFRAME.registerComponent('menu-click', {
           // 執行平移動畫
           this.el.setAttribute('animation', {
               property: 'position',
-              to: '-5 -0.2 -0.8',
+              to: '-5 0 -1',
               dur: 1500
           });
 
@@ -25,7 +25,7 @@ AFRAME.registerComponent('intro-click', {
       // 執行平移動畫顯示介紹
       this.el.setAttribute('animation', {
           property: 'position',
-          to: '0.05 -0.22 -0.8',
+          to: '0 0 -1',
           dur: 2000
       });
   }
