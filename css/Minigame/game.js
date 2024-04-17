@@ -14,7 +14,6 @@ $(document).ready(function() {
       "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E8%80%83%E8%A9%A6%E7%B0%A1%E5%96%AE.png?raw=true",
 
   ];
-
   // 不加分图片URLs
   var negativeImages = [
       "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E4%B8%80%E8%B5%B7%E9%9D%A2%E5%B0%8D.png?raw=true",
@@ -32,17 +31,17 @@ $(document).ready(function() {
   var minSize, maxSize;
   var screenWidth = $(window).width(); // Gets the width of the screen
   if (screenWidth >= 2048) { // For larger screens like 12.9-inch iPad Pro
-      minSize = 260;
-      maxSize = 330;
+      minSize = 380;
+      maxSize = 350;
   } else if (screenWidth >= 1668 && screenWidth < 2048) { // For medium screens like 11-inch iPad Pro
-      minSize = 230;
-      maxSize = 280;
+      minSize = 340;
+      maxSize = 310;
   } else if (screenWidth >= 1536 && screenWidth < 1668) { // For smaller screens like iPad Air 2
-      minSize = 200;
-      maxSize = 230;
+      minSize = 300;
+      maxSize = 270;
   } else { // For even smaller screens
-      minSize = 150;
-      maxSize = 180;
+      minSize = 250;
+      maxSize = 220;
   }
   // 生成随机数的
   function random(min, max) {
@@ -91,10 +90,10 @@ $(document).ready(function() {
   });
 
   var runGame = setInterval(function() {
-      for (var i = 0; i <= 4; i++) { // Simultaneous number of boxes, can modify to control
+      for (var i = 0; i < 3; i++) { // Simultaneous number of boxes, can modify to control
           dropBox();
       }
-  }, 7000); // Interval of game loop, can adjust to modify interval
+  }, 9000); // Interval of game loop, can adjust to modify interval
 
   // Countdown timer setup, can modify 90 seconds to set different game duration
   function countdown() {
