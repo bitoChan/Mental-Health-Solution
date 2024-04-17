@@ -193,11 +193,18 @@
                         </div>
                         <div class="q2-wrong-container09"></div>
                     </div>
-                    <button type="button" class="q2-wrong-button button" onclick="location.href='Minigame-menu.html';">進入小游戲</button>
+                    <button type="button" class="q2-wrong-button button" style="display: none;" onclick="location.href='Minigame-menu.html';">進入小游戲</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+<script>
+    setTimeout(function () {
+        var startButton = document.querySelector('.q2-wrong-button');
+        if (startButton) {
+            startButton.style.display = 'block'; // 顯示按鈕
+        }
+    }, 5000); // 5秒後執行
+</script>
 </html>

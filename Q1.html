@@ -67,14 +67,6 @@
     </a-scene>
     <!-- Script功能-->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (navigator.userAgent.includes('iPad')) {
-                var canvas = document.getElementById('aframeCanvas');
-                if (canvas) {
-                    canvas.style.filter = 'brightness(140%)';
-                }
-            }
-        });
 
         setTimeout(function () {
             var startButton = document.querySelector('.start-button');
@@ -181,6 +173,15 @@
                 this.el.addEventListener('click', () => {
                     window.location.href = this.data.url; // 点击时跳转到指定的URL
                 });
+            }
+        });
+        //暫時未能做到識別Ipad
+        document.addEventListener('DOMContentLoaded', function () {
+            if (navigator.userAgent.includes('iPad')) {
+                var canvas = document.getElementById('aframeCanvas');
+                if (canvas) {
+                    canvas.style.filter = 'brightness(140%)';
+                }
             }
         });
     </script>

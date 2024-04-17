@@ -4,7 +4,7 @@
     height:96vh;
     position: relative;
     overflow: hidden;
-    
+
   }
   
   .score{
@@ -23,7 +23,7 @@
     width: 100px;
     height:100px;
     position:absolute;
-    top: -150px;
+    top: -500px;
     transition: transform 1.5s linear;
     cursor: pointer;
     z-index:100;

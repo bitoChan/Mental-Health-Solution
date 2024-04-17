@@ -190,11 +190,18 @@
                         </div>
                         <div class="wrong-container09"></div>
                     </div>
-                    <button type="button" class="wrong-button button" onclick="location.href='State2.html';">下一個環節</button>
+                    <button type="button" class="wrong-button button" style="display: none;" onclick="location.href='State2.html';">下一個環節</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+<script>
+    setTimeout(function () {
+        var startButton = document.querySelector('.wrong-button');
+        if (startButton) {
+            startButton.style.display = 'block'; // 顯示按鈕
+        }
+    }, 5000); // 5秒後執行
+</script>
 </html>

@@ -127,7 +127,7 @@
 </head>
 
 <body>
-    
+
     <link rel="stylesheet" href="css/Q1-YES/style.css" />
     <div>
         <link href="css/Q1-YES/index.css" rel="stylesheet" />
@@ -141,8 +141,7 @@
                         <br />
                     </h1>
                     <div class="correct-container04">
-                        <img alt="image" src="css/Q1-YES/public/tick-1500h.png"
-                            class="correct-image" />
+                        <img alt="image" src="css/Q1-YES/public/tick-1500h.png" class="correct-image" />
                         <div class="correct-container05">
                             <div class="correct-container06">
                                 <ul class="list correct-ul">
@@ -186,11 +185,18 @@
                     </div>
                     <div class="correct-container08"></div>
                 </div>
-                <button type="button" class="correct-button button"  onclick="location.href='State2.html';">下一個環節</button>
+                <button type="button" class="correct-button button" style="display: none;" onclick="location.href='State2.html';">下一個環節</button>
             </div>
             <div class="correct-container09"></div>
         </div>
     </div>
 </body>
-
+<script>
+    setTimeout(function () {
+        var startButton = document.querySelector('.correct-button');
+        if (startButton) {
+            startButton.style.display = 'block'; // 顯示按鈕
+        }
+    }, 5000); // 5秒後執行
+</script>
 </html>

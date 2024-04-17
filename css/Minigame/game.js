@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
   var score = 0; // 游戏得分
-
+    
   // 加分（中傷人）图片,圖片來源皆來自いらすとや插圖屋，并且插圖並沒有做出任何的修改，
   var positiveImages = [
       "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%81%9A%E4%B8%8D%E5%A5%BD.png?raw=true",
@@ -50,7 +50,7 @@ $(document).ready(function() {
   }
   // 控制箱子降落的
   function dropBox() {
-      var length = random(100, $(".game").width() - 100);
+      var length = random(100, $(".game").width() - 330);//最大的size 為330因此不要退出去
       var velocity = random(9000, 10000);
       var size = random(minSize, maxSize); // Use dynamic sizing
       var thisBox = $("<div/>", {
@@ -91,14 +91,14 @@ $(document).ready(function() {
   });
 
   var runGame = setInterval(function() {
-      for (var i = 0; i < 4; i++) { // Simultaneous number of boxes, can modify to control
+      for (var i = 0; i <= 4; i++) { // Simultaneous number of boxes, can modify to control
           dropBox();
       }
   }, 7000); // Interval of game loop, can adjust to modify interval
 
   // Countdown timer setup, can modify 90 seconds to set different game duration
   function countdown() {
-      var seconds = 120; // Countdown seconds, can modify as needed
+      var seconds = 90; // Countdown seconds, can modify as needed
       function tick() {
           var counter = document.getElementById("counter");
           seconds--;
@@ -106,7 +106,7 @@ $(document).ready(function() {
           if (seconds > 0) {
               setTimeout(tick, 1000);
           } else {
-              alert("你成功掌握了語言的溫度,一句説話帶來的溫度和力量,有時可以幫助同學度過難關." + score);
+              alert("你成功掌握了語言的溫度,一句説話帶來的溫度和力量,有時可以幫助同學度過難關.");
               clearInterval(runGame);
           }
       }
