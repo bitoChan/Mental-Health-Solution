@@ -137,7 +137,8 @@ body{
 
 .slider-text {
   text-align: center;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: 500px;
   color: #0e0202; /* Adjust the color as needed */
   padding: 10px 0; /* Space above and below the text */
 }
@@ -149,7 +150,21 @@ body{
 }
 
 .center-button button {
-  padding: 10px 20px;
-  font-size: 16px;
+  width: 600px;
+  height: 50px;
+  padding: 12px 25px;
+  font-size: 20px; /* Slightly larger font size for better readability */
+  font-weight: 500px;
+  color: #ffffff; /* White text color */
+  background-color: #d15613; /* A pleasant blue background color */
+  border: none; /* No border for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.center-button button:hover {
+  background-color: #0056b3; /* Darker blue when hovered for a nice effect */
+  transform: translateY(-2px); /* Slight lift when hovered */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
