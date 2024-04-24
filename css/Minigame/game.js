@@ -31,17 +31,17 @@ $(document).ready(function() {
   var minSize, maxSize;
   var screenWidth = $(window).width(); // Gets the width of the screen
   if (screenWidth >= 2048) { // For larger screens like 12.9-inch iPad Pro
-      minSize = 380;
-      maxSize = 350;
+      minSize = 410;
+      maxSize = 380;
   } else if (screenWidth >= 1668 && screenWidth < 2048) { // For medium screens like 11-inch iPad Pro
-      minSize = 340;
-      maxSize = 310;
+      minSize = 370;
+      maxSize = 340;
   } else if (screenWidth >= 1536 && screenWidth < 1668) { // For smaller screens like iPad Air 2
-      minSize = 300;
-      maxSize = 270;
+      minSize = 330;
+      maxSize = 300;
   } else { // For even smaller screens
-      minSize = 250;
-      maxSize = 220;
+      minSize = 290;
+      maxSize = 260;
   }
   // 生成随机数的
   function random(min, max) {
@@ -49,46 +49,63 @@ $(document).ready(function() {
   }
   // 控制箱子降落的
   function dropBox() {
-      var length = random(100, $(".game").width() - 330);//最大的size 為330因此不要退出去
-      var velocity = random(9000, 10000);
-      var size = random(minSize, maxSize); // Use dynamic sizing
-      var thisBox = $("<div/>", {
-          class: "box",
-          style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
-      });
+    var length = random(100, $(".game").width() - 330); // 控制箱子不要超出游戏区域
+    var velocity = random(13500, 14000); // 速度
+    var size = random(minSize, maxSize); // 动态尺寸
 
-      // Randomly select a positive or negative image
-      if (Math.round(Math.random())) {
-          var positiveIndex = random(0, positiveImages.length - 1);
-          thisBox.css({
-              background: "url('" + positiveImages[positiveIndex] + "')",
-              "background-size": "contain"
-          }).data("scoreChange", 1); // 加一分
-      } else {
-          var negativeIndex = random(0, negativeImages.length - 1);
-          thisBox.css({
-              background: "url('" + negativeImages[negativeIndex] + "')",
-              "background-size": "contain"
-          }).data("scoreChange", 0); // 不扣分
-      }
+    var thisBox = $("<div/>", {
+        class: "box",
+        style: "width:" + size + "px; height:" + size + "px; left:" + length + "px; transition: transform " + velocity + "ms linear;"
+    });
 
-      $(".game").append(thisBox);
+    // 随机选择正面或负面图片
+    if (Math.round(Math.random())) {
+        var positiveIndex = random(0, positiveImages.length - 1);
+        thisBox.css({
+            background: "url('" + positiveImages[positiveIndex] + "')",
+            "background-size": "contain"
+        }).data("scoreChange", 1);
+    } else {
+        var negativeIndex = random(0, negativeImages.length - 1);
+        thisBox.css({
+            background: "url('" + negativeImages[negativeIndex] + "')",
+            "background-size": "contain"
+        }).data("scoreChange", 0);
+    }
 
-      setTimeout(function() {
-          thisBox.addClass("move");
-      }, random(0, 5000));
+    $(".game").append(thisBox);
+    setTimeout(function() {
+        thisBox.addClass("move");
+    }, random(0, 5000));
 
-      thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function(event) {
-          $(this).remove();
-      });
-  }
+    thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function(event) {
+        $(this).remove();
+    });
+}
+
+
+function isOverlap(newBox) {
+    var overlap = false;
+    $(".box").each(function() {
+        var existingBox = $(this);
+        if (Math.abs(existingBox.position().left - newBox.position().left) < newBox.width()) {
+            overlap = true;
+            return false; // 跳出迴圈
+        }
+    });
+    return overlap;
+}
 
   $(document).on("click", ".box", function() {
       score += $(this).data("scoreChange"); // 根据箱子的标记来增加分数
       $(".score").html(score);
       $(this).remove();
   });
-
+  //循環進行掉落游戲之前，0秒播放一次
+  for (var i = 0; i < 3; i++) { // Simultaneous number of boxes, can modify to control
+    dropBox();
+}
+  
   var runGame = setInterval(function() {
       for (var i = 0; i < 3; i++) { // Simultaneous number of boxes, can modify to control
           dropBox();
