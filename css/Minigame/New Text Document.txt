@@ -1,59 +1,24 @@
-AFRAME.registerComponent('menu-click', {
-    init: function() {
-        this.el.addEventListener('click', (evt) => {
-            // 执行平移动画
-            this.el.setAttribute('animation', {
-                property: 'position',
-                to: '-5 0 -1',
-                dur: 1500
-            });
+  // 加分（中傷人）图片,圖片來源皆來自いらすとや插圖屋，并且插圖並沒有做出任何的修改，
+  var positiveImages = [
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%81%9A%E4%B8%8D%E5%A5%BD.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%81%9A%E9%8C%AF.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%8F%AA%E7%9F%A5%E9%81%93%E5%93%AD.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%A4%AA%E6%95%8F%E6%84%9F%E4%BA%86.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%B0%8F%E4%BA%8B%E9%83%BD%E5%81%9A%E4%B8%8D%E5%A5%BD.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E6%8B%96%E5%BE%8C%E8%85%BF.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E8%80%83%E7%9A%84%E5%B7%AE.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E8%80%83%E8%A9%A6%E7%B0%A1%E5%96%AE.png?raw=true",
 
-            // 显示介绍
-            document.querySelector('[intro-click]').components['intro-click'].showIntroduction();
-        });
-    }
-});
-AFRAME.registerComponent('intro-click', {
-    init: function() {
-        this.el.addEventListener('click', (evt) => {
-            // 执行平移动画
-            this.el.setAttribute('animation', {
-                property: 'position',
-                to: '-5 0 -1',
-                dur: 2000
-            });
+  ];
+  // 不加分图片URLs
+  var negativeImages = [
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E4%B8%80%E8%B5%B7%E9%9D%A2%E5%B0%8D.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E4%B8%8D%E8%A6%81%E7%81%B0%E5%BF%83.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E5%A4%B1%E6%95%97%E4%B8%8D%E6%98%AF%E7%B5%82%E9%BB%9E.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E6%88%90%E5%8A%9F%E8%B7%AF%E4%B8%8A.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E6%94%AF%E6%8C%81%E4%BD%A0.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E6%BD%9B%E5%8A%9B%E7%84%A1%E9%99%90.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E9%99%AA%E8%91%97%E4%BD%A0.png?raw=true",
+      "https://github.com/bitoChan/Mental-Health-Solution/blob/main/css/Minigame/icon/%E9%9B%A8%E5%BE%8C%E6%9C%89%E5%BD%A9%E8%99%B9.png?raw=true",
 
-            // 在动画完成后隐藏，同时触发 rule-click 的动画
-            setTimeout(() => {
-                this.el.setAttribute('visible', 'false');
-                document.querySelector('[rule-click]').components['rule-click'].showRule();
-            }, 2000);
-        });
-    },
-
-    showIntroduction: function() {
-        // 设置动画移动到 '0 0 -1'
-        this.el.setAttribute('animation', {
-            property: 'position',
-            to: '0 0 -1',
-            dur: 2000
-        });
-    }
-});
-
-
-AFRAME.registerComponent('rule-click', {
-    init: function() {
-        this.el.addEventListener('click', (evt) => {
-            // 执行跳转
-            window.location.href = 'Minigame-game.html';
-        });
-    },
-    showRule: function() {
-        this.el.setAttribute('animation', {
-            property: 'position',
-            to: '0 0 -1',
-            dur: 2000
-        });
-    }
-});
+    ];

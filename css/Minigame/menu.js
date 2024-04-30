@@ -64,7 +64,7 @@ AFRAME.registerComponent('gameplay-click', {
         this.el.setAttribute('animation', {
             property: 'position',
             to: '0 0 -1',
-            dur: 1600
+            dur: 750
         });
     }
 });
@@ -80,7 +80,7 @@ AFRAME.registerComponent('rule-click', {
         this.el.setAttribute('animation', {
             property: 'position',
             to: '0 0 -1',
-            dur: 1500
+            dur: 750
         });
     }
 });
