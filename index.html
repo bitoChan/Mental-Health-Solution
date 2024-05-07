@@ -10,7 +10,6 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src=".\aframe-extras-master\dist\aframe-extras.min.js"></script>
   <script src=".\aframe-extras-master\src\components\sound.js"></script>
-  
   <meta property="og:title" content="Orderly Hopeful Eagle" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
@@ -78,6 +77,7 @@
               if (permissionState === 'granted') {
                 // 权限被授予，可以添加事件监听器
                 console.log('Motion permissions granted');
+                navigateToMentalHealth();  // 权限授予后继续导航
               } else {
                 // 权限被拒绝
                 console.log('Motion permissions denied');
@@ -87,51 +87,41 @@
         } else {
           // 对于其他设备，不需要请求权限，可以直接添加事件监听
           console.log('No need to request motion permissions');
+          navigateToMentalHealth();  // 在不需要请求权限的设备上直接导航
         }
-      }
-    
-      // 获取元素
-      var scene = document.getElementById('scene');
-      var audio = document.getElementById('audio');
-      var content = document.getElementById('content');
-      var audioElement = document.getElementById("audio");
-      audioElement.volume = 0.5; // 设置音量为50%
-    
-      // 为场景添加点击事件
-      scene.addEventListener('click', function () {
-        // 现在请求权限
-        requestMotionPermissions();
-    
-        // 隐藏场景
-        scene.style.display = 'none';
-    
-        // 播放音乐
-        audio.style.display = 'block';
-        audio.play();
-    
-        // 显示内容
-        content.style.display = 'block';
-      });
-    
-      // 播放音乐函数
-      function playAudio() {
-        // 隐藏场景
-        scene.style.display = 'none';
-    
-        // 播放音乐
-        audio.style.display = 'block';
-        audio.play();
-        
-        // 显示内容
-        content.style.display = 'block';
       }
     
       // 前往 Q1.html
       function navigateToMentalHealth() {
         window.location.href = "Q1.html";
       }
+  
+      var button = document.querySelector('.animated-button');
+      button.addEventListener('click', function() {
+        requestMotionPermissions();  // 点击按钮时请求权限
+      });
+  
+      var scene = document.getElementById('scene');
+      var audio = document.getElementById('audio');
+      var content = document.getElementById('content');
+      var audioElement = document.getElementById("audio");
+      audioElement.volume = 0.5; // 设置音量为50%
+  
+      // 为场景添加点击事件
+      scene.addEventListener('click', function () {
+        // 隐藏场景
+        scene.style.display = 'none';
+  
+        // 播放音乐
+        audio.style.display = 'block';
+        audio.play();
+  
+        // 显示内容
+        content.style.display = 'block';
+      });
     });
-    </script>
+  </script>
+  
 </body>
 
 </html>
