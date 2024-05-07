@@ -10,6 +10,7 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src=".\aframe-extras-master\dist\aframe-extras.min.js"></script>
   <script src=".\aframe-extras-master\src\components\sound.js"></script>
+  
   <meta property="og:title" content="Orderly Hopeful Eagle" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
@@ -67,66 +68,70 @@
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // 请求运动传感器权限的函数
-    function requestMotionPermissions() {
-      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-        // 这是iOS 13+ 设备，需要请求权限
-        DeviceOrientationEvent.requestPermission()
-          .then(permissionState => {
-            if (permissionState === 'granted') {
-              // 权限被授予，可以添加事件监听器
-              console.log('Motion permissions granted');
-            } else {
-              // 权限被拒绝
-              console.log('Motion permissions denied');
-            }
-          })
-          .catch(console.error);
-      } else {
-        // 对于其他设备，不需要请求权限，可以直接添加事件监听
-        console.log('No need to request motion permissions');
+    document.addEventListener('DOMContentLoaded', function () {
+      // 请求运动传感器权限的函数
+      function requestMotionPermissions() {
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+          // 这是iOS 13+ 设备，需要请求权限
+          DeviceOrientationEvent.requestPermission()
+            .then(permissionState => {
+              if (permissionState === 'granted') {
+                // 权限被授予，可以添加事件监听器
+                console.log('Motion permissions granted');
+              } else {
+                // 权限被拒绝
+                console.log('Motion permissions denied');
+              }
+            })
+            .catch(console.error);
+        } else {
+          // 对于其他设备，不需要请求权限，可以直接添加事件监听
+          console.log('No need to request motion permissions');
+        }
       }
-    }
-    // 现在请求权限
-    requestMotionPermissions();
-    // 獲取元素
-    var scene = document.getElementById('scene');
-    var audio = document.getElementById('audio');
-    var content = document.getElementById('content');
-    var audioElement = document.getElementById("audio");
-    audioElement.volume = 0.5; // 設置音量為50%
-    // 為場景添加點擊事件
-    scene.addEventListener('click', function () {
-      // 隱藏場景
-      scene.style.display = 'none';
-
-      // 播放音樂
-      audio.style.display = 'block';
-      audio.play();
-
-      // 顯示內容
-      content.style.display = 'block';
-    });
-
-    // 播放音樂函數
-    function playAudio() {
-      // 隱藏場景
-      scene.style.display = 'none';
-
-      // 播放音樂
-      audio.style.display = 'block';
-      audio.play();
-      
-      // 顯示內容
-      content.style.display = 'block';
-    }
+    
+      // 获取元素
+      var scene = document.getElementById('scene');
+      var audio = document.getElementById('audio');
+      var content = document.getElementById('content');
+      var audioElement = document.getElementById("audio");
+      audioElement.volume = 0.5; // 设置音量为50%
+    
+      // 为场景添加点击事件
+      scene.addEventListener('click', function () {
+        // 现在请求权限
+        requestMotionPermissions();
+    
+        // 隐藏场景
+        scene.style.display = 'none';
+    
+        // 播放音乐
+        audio.style.display = 'block';
+        audio.play();
+    
+        // 显示内容
+        content.style.display = 'block';
+      });
+    
+      // 播放音乐函数
+      function playAudio() {
+        // 隐藏场景
+        scene.style.display = 'none';
+    
+        // 播放音乐
+        audio.style.display = 'block';
+        audio.play();
+        
+        // 显示内容
+        content.style.display = 'block';
+      }
+    
       // 前往 Q1.html
       function navigateToMentalHealth() {
         window.location.href = "Q1.html";
       }
     });
-  </script>
+    </script>
 </body>
 
 </html>
