@@ -1,11 +1,3 @@
-#12-Apr-2024
-Minigame的Ipad需要調整/甚至是兩個模式
-Minigame的圖片需要做更改
-然後Q1 Camera需要Static一下
-
-#16-Apr-2024
-維修sciprt的錯誤和位置，放在head會導致：場景<a-scene>組<a-entity>無法被中找到
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +14,7 @@ Minigame的圖片需要做更改
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
+  
   <!--預加載模型-->
   <!--link rel="preload" href="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf" as="fetch" crossorigin="anonymous"-->
   <!--link rel="preload" href="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf" as="fetch" crossorigin="anonymous"-->

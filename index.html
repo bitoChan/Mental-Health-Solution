@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
+  
   <!--預加載模型-->
   <!--link rel="preload" href="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Classroom/Classroom.gltf" as="fetch" crossorigin="anonymous"-->
   <!--link rel="preload" href="https://raw.githubusercontent.com/bitoChan/Mental-Health-Solution/main/3D-Model/Student/Student.gltf" as="fetch" crossorigin="anonymous"-->
@@ -66,6 +67,29 @@
   </div>
 
   <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 请求运动传感器权限的函数
+    function requestMotionPermissions() {
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        // 这是iOS 13+ 设备，需要请求权限
+        DeviceOrientationEvent.requestPermission()
+          .then(permissionState => {
+            if (permissionState === 'granted') {
+              // 权限被授予，可以添加事件监听器
+              console.log('Motion permissions granted');
+            } else {
+              // 权限被拒绝
+              console.log('Motion permissions denied');
+            }
+          })
+          .catch(console.error);
+      } else {
+        // 对于其他设备，不需要请求权限，可以直接添加事件监听
+        console.log('No need to request motion permissions');
+      }
+    }
+    // 现在请求权限
+    requestMotionPermissions();
     // 獲取元素
     var scene = document.getElementById('scene');
     var audio = document.getElementById('audio');
@@ -101,6 +125,7 @@
       function navigateToMentalHealth() {
         window.location.href = "Q1.html";
       }
+    });
   </script>
 </body>
 
